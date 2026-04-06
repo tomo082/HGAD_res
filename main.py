@@ -87,7 +87,7 @@ if __name__ == '__main__':
     setting_lr_parameters(args)
     
     args.device = torch.device("cuda:" + args.gpu)
-    
+    """
     # set dataset path
     if args.dataset == 'mvtec':
         #args.data_path = '/data/data1/yxc/datasets/mvtec_anomaly_detection'
@@ -104,5 +104,6 @@ if __name__ == '__main__':
                           '/data/data1/yxc/datasets/visa']
     else:
         raise ValueError('Unrecognized or unsupported dataset!')
+    """
     
     train.train(args)
