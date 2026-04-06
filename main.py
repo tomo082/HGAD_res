@@ -36,6 +36,8 @@ def parse_args():
     # Data configures
     parser.add_argument('--dataset', default='mvtec', type=str,
                         choices=['mvtec', 'btad', 'mvtec3d', 'visa', 'union'])
+    parser.add_argument('--data_path', default='mvtec', type=str
+                       )
     parser.add_argument('--img_size', default=1024, type=int, 
                         help='image size (default: 1024)')
     parser.add_argument('--msk_size', default=256, type=int, 
@@ -73,6 +75,7 @@ def parse_args():
     parser.add_argument('--output_dir', default='./outputs', type=str, 
                         help='directory to save model weights')
     
+    
     args = parser.parse_args()
     
     return args
@@ -87,13 +90,13 @@ if __name__ == '__main__':
     
     # set dataset path
     if args.dataset == 'mvtec':
-        args.data_path = '/data/data1/yxc/datasets/mvtec_anomaly_detection'
+        #args.data_path = '/data/data1/yxc/datasets/mvtec_anomaly_detection'
     elif args.dataset == 'btad':
-        args.data_path = '/data/data1/yxc/datasets/btad'
+        #args.data_path = '/data/data1/yxc/datasets/btad'
     elif args.dataset == 'mvtec3d':
-        args.data_path = '/data/data1/yxc/datasets/mvtec_3d_anomaly_detection'
+        #args.data_path = '/data/data1/yxc/datasets/mvtec_3d_anomaly_detection'
     elif args.dataset == 'visa':
-        args.data_path = '/data/data1/yxc/datasets/visa'
+        #args.data_path = '/data/data1/yxc/datasets/visa'
     elif args.dataset == 'union':
         args.data_path = ['/data/data1/yxc/datasets/mvtec_anomaly_detection',
                           '/data/data1/yxc/datasets/btad',
